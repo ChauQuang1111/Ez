@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML DOM querySelectorAll() Method</title>
+    <meta charset="utf-8" />
+    <style>
+      a[target] {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="example"style="background-color: lightblue;border:1px solid;width: 600px;">This is the first paragraph with class="example"</h2>
+    <p class="example"style="background-color: lightblue;border:1px solid;width: 600px;;">Another paragraph with class="example".</p>
+    <p href="" target="" style="color: blue">Link with target attribute</a>
+    <br />
+    <p href="" target="" style="color: blue"
+      >Another link with target attribute</p>
+    <h1 class="Title">Title 1</h1>
+	<h2 class="Title">Title 2</h2>
+    <button onclick="Click()">Change</button>
+
+    <script>
+      function Click() {
+        // h1 , h2
+        let hE = document.querySelectorAll("h1.Title , h2.Title");
+        for (let item of hE) {
+          item.style.color = "orange";
+        }
+
+        // ClassExample
+        var example = document.getElementsByClassName("example");
+        for (let i = 0; i < example.length; i++) {
+          const examples = example[i];
+          examples.style.margin = "10px"; // Thay đổi margin
+          examples.style.padding = "10px"; // Thay đổi padding
+          //examples.style.border = "1px solid red"; // Thêm border
+          example[0].style.backgroundColor="yellow";
+        }
+        // Target
+        var links = document.querySelectorAll("a[target]");
+        for (let items of links) {
+          items.style.border = "1px solid black";
+          items.style.textDecoration = "none";
+        }
+         var linksWithTarget = document.querySelectorAll("p[target]");
+
+        linksWithTarget[0].style.border = "2px solid red";
+        linksWithTarget[0].style.backgroundColor = "white";
+        linksWithTarget[1].style.border = "2px solid red";
+        linksWithTarget[1].style.backgroundColor = "white";
+        linksWithTarget[1].style.width = "400px";
+        linksWithTarget[0].style.width = "400px";
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML DOM querySelector() Method</title>
+    <meta charset="utf-8" />
+    <style>
+      div {
+        border: 1px solid black;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="example"style="color:green;background-color:lightblue;">This is the first paragraph with class="example"</p>
+    <p class="example">This is another paragraph".</p>
+    <a href="" target="" style="color: blue">Link with target attribute</a>
+    <br>
+    <button onclick="changeStyles()">Change</button>
+    <script>
+      function changeStyles() {
+        // Add background color to first p element with class "example"
+        var exampleParagraphs = document.getElementsByTagName("p");
+
+        exampleParagraphs[0].style.backgroundColor = "yellow";
+        exampleParagraphs[0].style.color="blue";
+
+        // Add red border to first link with target attribute
+        var linksWithTarget = document.querySelectorAll("a[target]");
+
+        linksWithTarget[0].style.border = "2px solid red";
+        linksWithTarget[0].style.backgroundColor = "white";
+
+        // Change font size and color of first p element with a div parent
+        var divP = document.querySelectorAll("div > p");
+        for (let item of divP) {
+          item.style.fontSize = "20px";
+          item.style.color = "green";
+        }
+        // divP[0].style.fontSize = '20px';
+        // divP[0].style.color = 'green';
+      }
+    </script>
+  </body>
+</html>
